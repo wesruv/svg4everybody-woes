@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SVG4Everybody Woes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <p>I want inline svg's for dynamic styling, but no matter which part of the sprite I choose svg4everybody replaces <code>&lt;use></code> with something that doesn't display, or displays incorrectly.</p>
+  <svg width="44" height="44" viewBox="0 0 44 44" class="topic-card__icon">
+    <use href="topics.svg#404-bot"></use>
+  </svg>
+  <p>If you turn off JS it'll work, here's the sprite in a plain <code>&lt;img></code> tag.</p>
+  <img src="topics.svg" alt="" />
+
+  <p>Halp! 😭😭😭😭😭😭</p>
+<script src="svg4everybody.min.js" data-version="2.1.9"></script>
+
+<script>
+  window.addEventListener('load', function(event) {
+    svg4everybody({
+      // 'nosvg': true, // shiv <svg> and <use> elements and use image fallbacks
+      'polyfill': true, // polyfill <use> elements for External Content
+    });
+  });
+</script>
+
+</body>
+
+</html>
